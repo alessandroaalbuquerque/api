@@ -6,7 +6,11 @@ const Artigo = new mongoose.Schema(
       type: String,
       required: true,
     },
-    conteudo: {
+    status: {
+      type: String,
+      required: true,
+    },
+    mensagem: {
       type: String,
       required: true,
     },
