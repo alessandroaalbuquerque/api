@@ -10,7 +10,15 @@ Projeto com uso de docker-compose, mongodb, node.js api rest full
 //Subir serviços
 make up
 
-//URLs para API
+## CORREÇÃO DE BUG
+
+//Caso não subir container web
+make down
+npm install
+make up
+
+## URLs para API
+
 .Cadastrar POST "http://localhost:3001/artigo"
 {
 "titulo": "task1",
