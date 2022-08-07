@@ -1,21 +1,19 @@
 version: "3"
 services:
-  #  db:
-  #    image: mongo:4.2
-  #    container_name: db
-  #    restart: always
-  #    ports:
-  #      - 27018:27017
-  #    volumes:
-  #      - .:.
+  db_estudo:
+    image: mongo:4.2
+    container_name: db
+    restart: always
+    ports:
+      - 27018:27017
 
-  app:
+  app_estudo:
     build: .
     command: npm start
     restart: always
-    #  depends_on:
-    #    - db
+    depends_on:
+      - db_estudo
     ports:
       - 3001:8080
     volumes:
-      - . /usr/app
+      - .:/usr/app

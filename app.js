@@ -1,22 +1,21 @@
 //Dependências
 const express = require("express");
-//const mongoose = require("mongoose");
-//require("./models/Artigo");
-//const Artigo = mongoose.model("artigo");
-//const app = express();
-
+const mongoose = require("mongoose");
+require("./models/Artigo");
+const Artigo = mongoose.model("artigo");
 const app = express();
-//app.use(express.json());
+
+app.use(express.json());
 
 //Conexão com o DB
-//mongoose
-// .connect("mongodb://db/estudo", {})
-//  .then(() => {
-//    console.log("Conexão com o MongoDB realizada com sucesso!");
-//  })
-//  .catch((erro) => {
-//    console.log("Erro: Conexão com MongoDB n]ao foi realizada com sucesso!");
-//  });
+mongoose
+  .connect("mongodb://db_estudo/object", {})
+  .then(() => {
+    console.log("Conexão com o MongoDB realizada com sucesso!");
+  })
+  .catch((erro) => {
+    console.log("Erro: Conexão com MongoDB n]ao foi realizada com sucesso!");
+  });
 
 //Rota para listar dados no MongoDB
 app.get("/", (req, res) => {
