@@ -6,7 +6,7 @@ WORKDIR /usr/app
 
 COPY package*.json ./
 
-RUN npm install express mongoose
+RUN npm install
 
 COPY . .
 
