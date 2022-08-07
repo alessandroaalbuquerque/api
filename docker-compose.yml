@@ -6,6 +6,8 @@ services:
     restart: always
     ports:
       - 27018:27017
+    volumes:
+      - .:/usr/app
 
   app_estudo:
     build: .
@@ -16,5 +18,3 @@ services:
       - db_estudo
     ports:
       - 3001:8080
-    volumes:
-      - .:/usr/app
