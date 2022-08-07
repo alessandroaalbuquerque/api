@@ -3,7 +3,7 @@
 .PHONY: up
 
 up:
-	docker-compose up --build
+	docker-compose up -d --build
 
 .PHONY: down
 
@@ -14,3 +14,15 @@ down:
 
 logs:
 	docker-compose logs -f
+
+.PHONY: stop
+
+logs:
+	docker-compose stop	
+
+.PHONY: start
+
+logs:
+	docker-compose start	
+
+	

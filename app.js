@@ -25,7 +25,6 @@ app.get("/", (req, res) => {
     })
     .catch((erro) => {
       return res.status(400).json({
-        error: true,
         message: "Nenhum artigo encontrado!",
       });
     });
@@ -41,8 +40,7 @@ app.get("/artigo/:id", (req, res) => {
     })
     .catch((erro) => {
       return res.status(400).json({
-        error: true,
-        message: "Nehum artigo encontrado!",
+        message: "Nenhum artigo encontrado!",
       });
     });
 });
@@ -52,12 +50,10 @@ app.post("/artigo", (req, res) => {
   const artigo = Artigo.create(req.body, (err) => {
     if (err)
       return res.status(400).json({
-        erro: true,
         Message: "Error: Artigo não foi cadastrado com sucesso!",
       });
 
     return res.status(200).json({
-      erro: false,
       Message: "Cadastrado com sucesso!",
     });
   });
@@ -68,12 +64,10 @@ app.put("/artigo/:id", (req, res) => {
   const artigo = Artigo.updateOne({ _id: req.params.id }, req.body, (err) => {
     if (err)
       return res.status(400).json({
-        erro: true,
         message: "Error: Artigo não foi editado com sucesso!",
       });
 
     return res.json({
-      erro: false,
       message: "Artigo editado com sucesso!",
     });
   });
@@ -84,12 +78,10 @@ app.delete("/artigo/:id", (req, res) => {
   const artigo = Artigo.deleteOne({ _id: req.params.id }, req.body, (err) => {
     if (err)
       return res.status(400).json({
-        erro: true,
         message: "Artigo não deletado com sucesso!",
       });
 
     return res.json({
-      erro: false,
       message: "Artigo deletado com sucesso!",
     });
   });

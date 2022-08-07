@@ -10,6 +10,7 @@ services:
   app_estudo:
     build: .
     command: npm start
+    container_name: web
     restart: always
     depends_on:
       - db_estudo
